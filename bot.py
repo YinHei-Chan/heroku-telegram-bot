@@ -27,6 +27,8 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
-	bot.reply_to(message, random.choice(chatlist))
+	x = random.choice(chatlist)
+	print(message , x)
+	bot.reply_to(message, x)
 
 bot.polling()
