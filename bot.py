@@ -9,7 +9,7 @@ import telebot
 #           Config vars
 token = os.environ['TELEGRAM_TOKEN']
 chatlist = list()
-with open("NRC-Emotion-Lexicon-Wordlevel-v0.92.txt", "r", encoding="utf-8") as lines:
+with open("chatline.txt", "r", encoding="utf-8") as lines:
 	for line in lines:
 		chatlist.append(line)
 #             ...
