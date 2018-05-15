@@ -8,6 +8,10 @@ import telebot
 # Example of your code beginning
 #           Config vars
 token = os.environ['TELEGRAM_TOKEN']
+chatlist = list()
+with open("NRC-Emotion-Lexicon-Wordlevel-v0.92.txt", "r", encoding="utf-8") as lines:
+	for line in lines:
+		chatlist.append(line)
 #             ...
 
 # If you use redis, install this add-on https://elements.heroku.com/addons/heroku-redis
@@ -22,6 +26,6 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
-	bot.reply_to(message, message.text)
+	bot.reply_to(message, random.choice(chatlist))
 
 bot.polling()
