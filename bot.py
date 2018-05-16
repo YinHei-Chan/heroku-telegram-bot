@@ -31,4 +31,8 @@ def echo_all(message):
 	print("who : "+ message.from_user.username+" said : "+message.text+" reply :" +x)
 	bot.reply_to(message, x)
 
-bot.polling()
+while True:
+	try:
+		bot.polling(none_stop=True)
+	except Exception as e:
+		print(e)
