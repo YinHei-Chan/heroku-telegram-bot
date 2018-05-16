@@ -29,6 +29,7 @@ def send_welcome(message):
 def echo_all(message):
 	x = random.choice(chatlist)
 	print("who : "+ message.from_user.username+" said : "+message.text+" reply :" +x)
+	random.shuffle(chatlist)
 	bot.reply_to(message, x)
 
 while True:
